@@ -2,7 +2,7 @@
 SOURCE="/home/$USER/"
 DEST="/mnt/backup/ubuntu_home_backup/"
 DATE=$(date +%Y-%m-%d)
-PREV_BACKUP=$(ls -td ${DEST}* | head -1)
+PREV_BACKUP=$(find "${DEST}" -mindepth 1 -maxdepth 1 -type d | sort -r | head -1)
 EXCLUDE_FILE="rsync-homedir-excludes.txt"
 
 mkdir -p "${DEST}${DATE}"
@@ -16,5 +16,5 @@ else
           --exclude-from="${EXCLUDE_FILE}" "$SOURCE" "${DEST}${DATE}/"
 fi
 
-# Remove old backups if needed (optional). mtime sets max days for backups to store
+# Remove old backups if needed (optional)
 find "${DEST}" -mindepth 1 -maxdepth 1 -type d -mtime +7 -exec rm -rf {} \;
