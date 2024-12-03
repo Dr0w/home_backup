@@ -10,11 +10,12 @@ mkdir -p "${DEST}${DATE}"
 # Check if a previous backup exists
 if [ -d "${PREV_BACKUP}" ]; then
     rsync -aP --delete --no-group --no-times --no-perms --no-specials --copy-links \
-          --exclude-from="${EXCLUDE_FILE}" --link-dest="${PREV_BACKUP}" "$SOURCE" "${DEST}${DATE}/"
+          --exclude-from="${EXCLUDE_FILE}" --link-dest="${PREV_BACKUP}" \
+          "$SOURCE" "${DEST}${DATE}/" >> home_backup.log 2>&1
 else
     rsync -aP --delete --no-group --no-times --no-perms --no-specials --copy-links \
           --exclude-from="${EXCLUDE_FILE}" "$SOURCE" "${DEST}${DATE}/"
 fi
 
-# Remove old backups if needed (optional)
+# Remove old backups if needed (optional) Sets number of days to hold the backup
 find "${DEST}" -mindepth 1 -maxdepth 1 -type d -mtime +7 -exec rm -rf {} \;
