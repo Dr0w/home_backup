@@ -18,6 +18,8 @@ Mount the directory:
 
 This project uses the rsync-homedir-excludes list to exclude unnecessary files and directories from the backup.
 
+Cheers to **rubo77** (https://github.com/rubo77/rsync-homedir-excludes.git)
+
 Download the exclusion list:
 
 ```wget https://raw.githubusercontent.com/rubo77/rsync-homedir-excludes/master/rsync-homedir-excludes.txt -O rsync-homedir-local.txt```
