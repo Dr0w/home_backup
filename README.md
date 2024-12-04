@@ -69,4 +69,4 @@ The script logs the backup process to home_backup.log. You can view the log file
 
 **Network Stability:** Verify the network connection to the backup server is stable.
 
-*** Feel free to reach out if you encounter any issues or have questions about the script! ***
+***Feel free to reach out if you encounter any issues or have questions about the script!***
