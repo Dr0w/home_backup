@@ -93,3 +93,7 @@ Network Stability: Ensure the network connection to the backup server is stable.
 ```ping 10.0.0.196```
 
 ***Feel free to reach out if you encounter any issues or have questions about the script!***
+
+@sestech.com
+sestech leak
+sestech dump
